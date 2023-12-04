@@ -19,7 +19,7 @@ dependencies:
 
   lunar_datetime_picker:
     path: ../
-  lunar: ^1.2.21
+  lunar: ^1.6.1
   intl: ^0.18.0
 
   # The following adds the Cupertino Icons font to your application.

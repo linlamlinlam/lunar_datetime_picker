@@ -7,7 +7,7 @@
 ## 引用
 
 ```yaml
-flutter_lunar_datetime_picker: ^last_version
+lunar_datetime_picker: ^0.0.2
 ```
 
 ## 使用
@@ -16,6 +16,8 @@ flutter_lunar_datetime_picker: ^last_version
 DatePicker.showDatePicker(
             context,
             lunarPicker: false,
+            theme: const LunarDatePickerTheme(
+                    doneStyle: TextStyle(color: Colors.green)),
             dateInitTime: DateInitTime(
                 currentTime: DateTime.now(),
                 maxTime: DateTime(2026, 12, 12),
