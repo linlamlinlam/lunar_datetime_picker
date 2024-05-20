@@ -60,6 +60,7 @@ class _HomePageState extends State<HomePage> {
                 context,
                 lunarPicker: lunar,
                 theme: const LunarDatePickerTheme(
+                    backgroundColor: Colors.white,
                     doneStyle: TextStyle(color: Colors.green)),
                 dateInitTime: time == null
                     ? DateInitTime(
