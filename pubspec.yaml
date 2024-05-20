@@ -1,7 +1,7 @@
 name: lunar_datetime_picker
 description: A new Flutter lunar_datetime_picker.
 version: 0.0.3
-homepage:
+homepage: https://github.com/linlamlinlam/lunar_datetime_picker
 
 environment:
   sdk: '>=2.12.0 <4.0.0'
