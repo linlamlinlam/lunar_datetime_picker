@@ -482,13 +482,19 @@ class _DatePickerState extends State<_DatePickerComponent> {
                     onLunarChange(false);
                   },
                   style: ButtonStyle(
-                      padding: MaterialStateProperty.all(EdgeInsets.zero),
+                      shape:
+                          WidgetStateProperty.all(const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(7),
+                          bottomLeft: Radius.circular(7),
+                        ),
+                      )),
+                      padding: WidgetStateProperty.all(EdgeInsets.zero),
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      minimumSize:
-                          MaterialStateProperty.all(const Size(50, 26)),
+                      minimumSize: WidgetStateProperty.all(const Size(50, 26)),
                       backgroundColor: lunarPicker
-                          ? MaterialStateProperty.all(Colors.transparent)
-                          : MaterialStateProperty.all(theme.doneStyle.color)),
+                          ? WidgetStateProperty.all(Colors.transparent)
+                          : WidgetStateProperty.all(theme.doneStyle.color)),
                   child: Text(
                     "公历",
                     style: TextStyle(
@@ -501,13 +507,19 @@ class _DatePickerState extends State<_DatePickerComponent> {
                     onLunarChange(true);
                   },
                   style: ButtonStyle(
-                      padding: MaterialStateProperty.all(EdgeInsets.zero),
+                      shape:
+                          WidgetStateProperty.all(const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(7),
+                          bottomRight: Radius.circular(7),
+                        ),
+                      )),
+                      padding: WidgetStateProperty.all(EdgeInsets.zero),
                       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      minimumSize:
-                          MaterialStateProperty.all(const Size(50, 26)),
+                      minimumSize: WidgetStateProperty.all(const Size(50, 26)),
                       backgroundColor: lunarPicker
-                          ? MaterialStateProperty.all(theme.doneStyle.color)
-                          : MaterialStateProperty.all(Colors.transparent)),
+                          ? WidgetStateProperty.all(theme.doneStyle.color)
+                          : WidgetStateProperty.all(Colors.transparent)),
                   child: Text("阴历",
                       style: TextStyle(
                           color: lunarPicker

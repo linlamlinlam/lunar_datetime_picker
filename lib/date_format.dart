@@ -1,11 +1,9 @@
-// ignore_for_file: constant_identifier_names
-
 /// Outputs year as four digits
 ///
 /// Example:
-///     formatDate(new DateTime(2018,8,31), [ymdw]);
+///     formatDate(new DateTime(2018,8,31), [yMDW]);
 ///     // => Today
-const String ymdw = 'ymdw';
+const String yMDW = 'ymdw';
 
 ///
 /// Example:
@@ -41,9 +39,9 @@ const String m = 'm';
 /// Outputs month as long name
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 2), [MM]);
+///     formatDate(new DateTime(1989, 2), [mM]);
 ///     // => february
-const String MM = 'MM';
+const String mM = 'MM';
 
 /// Outputs month as short name
 ///
@@ -84,7 +82,7 @@ const String w = 'w';
 ///     // => 53
 ///     formatDate(new DateTime(1989, 2, 21), [W]);
 ///     // => 08
-const String WW = 'WW';
+const String wW = 'WW';
 
 /// Outputs week in year compactly
 ///
@@ -117,9 +115,9 @@ const String h = 'h';
 /// Outputs hour (0 to 23) as two digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15), [HH]);
+///     formatDate(new DateTime(1989, 02, 1, 15), [hH]);
 ///     // => 15
-const String HH = 'HH';
+const String hH = 'HH';
 
 /// Outputs hour (0 to 23) compactly
 ///
@@ -163,18 +161,18 @@ const String s = 's';
 /// Outputs millisecond as three digits
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 999), [SSS]);
+///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 999), [sSS]);
 ///     // => 999
 ///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 99), [SS]);
 ///     // => 099
 ///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 0), [SS]);
 ///     // => 009
-const String SSS = 'SSS';
+const String sSS = 'SSS';
 
 /// Outputs millisecond compactly
 ///
 /// Example:
-///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 999), [SSS]);
+///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 999), [sSS]);
 ///     // => 999
 ///     formatDate(new DateTime(1989, 02, 1, 15, 40, 10, 99), [SS]);
 ///     // => 99

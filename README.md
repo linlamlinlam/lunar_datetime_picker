@@ -7,7 +7,7 @@
 ## 引用
 
 ```yaml
-lunar_datetime_picker: ^0.0.2
+lunar_datetime_picker: ^0.0.3
 ```
 
 ## 使用
@@ -36,3 +36,5 @@ DatePicker.showDatePicker(
 - [flutter_datetime_picker](https://github.com/Realank/flutter_datetime_picker) 提供 PickerView 方案
 
 - [lunar_flutter](https://github.com/6tail/lunar-flutter) 提供农历日期算法
+
+- [flutter_lunar_datetime_picker](https://github.com/LoquatZ/flutter_lunar_datetime_picker) 提供农历日期

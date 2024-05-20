@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
+
 import 'package:lunar/lunar.dart';
-import 'package:lunar_datetime_picker/date_format.dart';
 import 'package:lunar_datetime_picker/datetime_util.dart';
+
+import 'date_format.dart';
 
 //interface for picker data model
 abstract class BasePickerModel {
@@ -419,6 +421,7 @@ class LunarPickerModel extends CommonPickerModel {
   late Lunar maxLunarTime;
   late Lunar minLunarTime;
   late Lunar currentLunarTime;
+
   LunarPickerModel(
       {DateTime? currentTime, DateTime? maxTime, DateTime? minTime}) {
     this.maxTime = maxTime ?? DateTime(2049, 12, 31);
@@ -429,7 +432,7 @@ class LunarPickerModel extends CommonPickerModel {
     minLunarTime = Solar.fromDate(this.minTime).getLunar();
     // 获取当前阴历
     currentLunarTime = Solar.fromDate(currentTime).getLunar();
-
+    debugPrint("currentLunarTime:$currentLunarTime");
     if (currentTime.compareTo(this.maxTime) > 0) {
       currentTime = this.maxTime;
       currentLunarTime = maxLunarTime;
@@ -602,17 +605,27 @@ class LunarPickerModel extends CommonPickerModel {
     int mCurrentMiddleIndex = 0;
 
     /// 检查是否闰月
-    bool isLeap =
-        LunarYear.fromYear(currentLunarTime.getYear()).getLeapMonth() != 0;
+    var leapMonth =
+        LunarYear.fromYear(currentLunarTime.getYear()).getLeapMonth();
     debugPrint("isLeap:$isLeap");
-    if (isLeap) {
-      // 当前最小月为闰月
-      if (_minMonthOfCurrentYear() < 0) {
-        mCurrentMiddleIndex = 0;
-      } else {
-        // 闰月会出现相同的月份所以指针+1
+    debugPrint("当前年最小月份${_minMonthOfCurrentYear()}");
+    debugPrint("当前月份${currentLunarTime.getMonth()}");
+    // 查询当前月是否存在闰月
+    if (leapMonth != 0) {
+      // 当前存在闰月
+      if (currentLunarTime.getMonth() < 0) {
+        // 当前月份为闰月
         mCurrentMiddleIndex =
             currentLunarTime.getMonth().abs() - _minMonthOfCurrentYear() + 1;
+      } else {
+        if (currentLunarTime.getMonth() > leapMonth) {
+          // 如果当前月大于闰月
+          mCurrentMiddleIndex =
+              currentLunarTime.getMonth().abs() - _minMonthOfCurrentYear() + 1;
+        } else {
+          mCurrentMiddleIndex =
+              currentLunarTime.getMonth().abs() - _minMonthOfCurrentYear();
+        }
       }
     } else {
       mCurrentMiddleIndex =
